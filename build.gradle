@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.5'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.twks-prereads.app.ws'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web' // Let Spring Boot manage the version
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml' // Let Spring Boot manage the version
+    implementation 'org.springframework.boot:spring-boot-starter-validation' // Uses Hibernate Validator and Jakarta Validation API
+    testImplementation 'org.springframework.boot:spring-boot-starter-test' // Let Spring Boot manage the version
+}
+
+
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
